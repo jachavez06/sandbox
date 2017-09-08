@@ -83,6 +83,27 @@
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Application helpers</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ApplicationHelper/CodeRayify.html" title="ApplicationHelper::CodeRayify (class)">CodeRayify</a></span>
+    
+  
+</p>
 
 
 
@@ -90,12 +111,97 @@
 
 
 
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
 
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#markdown-instance_method" title="#markdown (instance method)">#<strong>markdown</strong>(text)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="markdown-instance_method">
+  
+    #<strong>markdown</strong>(text)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/application_helper.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_markdown'>markdown</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_coderayified'>coderayified</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ApplicationHelper/CodeRayify.html" title="ApplicationHelper::CodeRayify (class)">CodeRayify</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>filter_html:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>hard_wrap:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>fenced_code_blocks:</span> <span class='symbol'>:true</span><span class='comma'>,</span>
+              <span class='label'>no_intra_emphasis:</span> <span class='kw'>true</span><span class='comma'>,</span>
+              <span class='label'>autolink:</span> <span class='kw'>true</span><span class='comma'>,</span>
+              <span class='label'>strikethrough:</span> <span class='kw'>true</span><span class='comma'>,</span>
+              <span class='label'>lax_html_blocks:</span> <span class='kw'>true</span><span class='comma'>,</span>
+              <span class='label'>superscript:</span> <span class='kw'>true</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_markdown_to_html'>markdown_to_html</span> <span class='op'>=</span> <span class='const'>Redcarpet</span><span class='op'>::</span><span class='const'>Markdown</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_coderayified'>coderayified</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_markdown_to_html'>markdown_to_html</span><span class='period'>.</span><span class='id identifier rubyid_render'>render</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
 </div>
 
       <div id="footer">
-  Generated on Fri Sep  8 16:39:36 2017 by
+  Generated on Fri Sep  8 18:30:07 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
