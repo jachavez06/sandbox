@@ -1,4 +1,6 @@
 # For landing page
 class WelcomeController < ApplicationController
-  def index; end
+  def index
+    @article = Article.new
+  end
 end

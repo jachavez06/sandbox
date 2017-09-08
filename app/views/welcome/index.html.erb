@@ -1,1 +1,10 @@
-<%= f.text_area :content, :class => 'ckeditor' %>
+<%= form_for @article do |f| %>
+  <%= f.label :first_name %>:
+  <%= f.text_field :first_name %><br />
+
+  <%= f.label :last_name %>:
+  <%= f.text_area :content, :class => 'ckeditor' %><br />
+
+
+  <%= f.submit %>
+<% end %>
