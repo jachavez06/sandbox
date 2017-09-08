@@ -217,13 +217,17 @@
 
 6
 7
-8</pre>
+8
+9
+10</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/controllers/articles_controller.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
   <span class='ivar'>@article</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Article.html" title="Article (class)">Article</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_article_params'>article_params</span><span class='rparen'>)</span>
+  <span class='ivar'>@article</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+  <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_article_path'>article_path</span><span class='lparen'>(</span><span class='ivar'>@article</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -275,12 +279,12 @@
       <pre class="lines">
 
 
-10
-11
-12</pre>
+12
+13
+14</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/articles_controller.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/articles_controller.rb', line 12</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span>
   <span class='ivar'>@article</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Article.html" title="Article (class)">Article</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -295,7 +299,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Sep  8 16:26:37 2017 by
+  Generated on Fri Sep  8 16:31:38 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
