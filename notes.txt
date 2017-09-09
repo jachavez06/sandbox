@@ -1,0 +1,4 @@
+must be in source mode, no tags around text, and enter:
+``` ruby
+def index
+```

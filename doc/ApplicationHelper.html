@@ -83,18 +83,7 @@
   
 </div>
 
-<h2>Overview</h2><div class="docstring">
-  <div class="discussion">
-    
-<p>Application helpers</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><h2>Defined Under Namespace</h2>
+<h2>Defined Under Namespace</h2>
 <p class="children">
   
     
@@ -165,6 +154,8 @@
       <pre class="lines">
 
 
+8
+9
 10
 11
 12
@@ -175,21 +166,25 @@
 17
 18
 19
-20</pre>
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/application_helper.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/application_helper.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_markdown'>markdown</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_coderayified'>coderayified</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ApplicationHelper/CodeRayify.html" title="ApplicationHelper::CodeRayify (class)">CodeRayify</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>filter_html:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>hard_wrap:</span> <span class='kw'>true</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>fenced_code_blocks:</span> <span class='symbol'>:true</span><span class='comma'>,</span>
-              <span class='label'>no_intra_emphasis:</span> <span class='kw'>true</span><span class='comma'>,</span>
-              <span class='label'>autolink:</span> <span class='kw'>true</span><span class='comma'>,</span>
-              <span class='label'>strikethrough:</span> <span class='kw'>true</span><span class='comma'>,</span>
-              <span class='label'>lax_html_blocks:</span> <span class='kw'>true</span><span class='comma'>,</span>
-              <span class='label'>superscript:</span> <span class='kw'>true</span> <span class='rbrace'>}</span>
-  <span class='id identifier rubyid_markdown_to_html'>markdown_to_html</span> <span class='op'>=</span> <span class='const'>Redcarpet</span><span class='op'>::</span><span class='const'>Markdown</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_coderayified'>coderayified</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_markdown_to_html'>markdown_to_html</span><span class='period'>.</span><span class='id identifier rubyid_render'>render</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span>
+ <span class='id identifier rubyid_coderayified'>coderayified</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ApplicationHelper/CodeRayify.html" title="ApplicationHelper::CodeRayify (class)">CodeRayify</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:filter_html</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> 
+                              <span class='symbol'>:hard_wrap</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+   <span class='symbol'>:fenced_code_blocks</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+   <span class='symbol'>:no_intra_emphasis</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+   <span class='symbol'>:autolink</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+   <span class='symbol'>:strikethrough</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+   <span class='symbol'>:lax_html_blocks</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+   <span class='symbol'>:superscript</span> <span class='op'>=&gt;</span> <span class='kw'>true</span>
+ <span class='rbrace'>}</span>
+ <span class='id identifier rubyid_markdown_to_html'>markdown_to_html</span> <span class='op'>=</span> <span class='const'>Redcarpet</span><span class='op'>::</span><span class='const'>Markdown</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_coderayified'>coderayified</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_markdown_to_html'>markdown_to_html</span><span class='period'>.</span><span class='id identifier rubyid_render'>render</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -201,7 +196,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Sep  8 18:32:09 2017 by
+  Generated on Fri Sep  8 19:06:46 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
